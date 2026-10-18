@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — UNBOTHERED</title><meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+body{background:var(--off)}
+.adm{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.side{background:var(--navy);color:#C7D2E4;padding:22px 0;position:sticky;top:0;height:100vh;overflow:auto}
+.side a{display:block;padding:10px 22px;font-size:13px;border-left:3px solid transparent}
+.side a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.side a.on{color:var(--gold);border-left-color:var(--gold);background:rgba(255,255,255,.05)}
+.side .logo{color:#fff;padding:0 22px 18px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:12px;font-size:19px}
+.side h5{padding:16px 22px 6px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5E7194}
+.adm-main{padding:30px 36px;max-width:1200px}
+.panel-box{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px;margin-bottom:22px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px}
+.kpi .num{font-family:var(--serif);font-size:26px;color:var(--navy)}
+.kpi p{font-size:12px;color:var(--muted)}
+.tbl-wrap{overflow-x:auto}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.pill{font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+.pill.ok{background:#E4F3EA;color:var(--ok)}.pill.warn{background:#FCF0E3;color:#9A5B13}.pill.bad{background:#FBE7E5;color:var(--danger)}.pill.navy{background:#E8EEF8;color:var(--navy)}
+@media(max-width:900px){.adm{grid-template-columns:1fr}.side{position:relative;height:auto}}
+</style>
+</head>
+<body>
+<div id="gate" style="max-width:400px;margin:14vh auto;background:#fff;border:1px solid var(--line);border-radius:6px;padding:40px">
+  <p class="eyebrow">UNBOTHERED Admin</p><h1 class="serif" style="font-size:28px;margin:10px 0 4px">Sign in to manage.</h1>
+  <p class="muted" style="font-size:13px;margin-bottom:20px">Demo password: <strong>admin123</strong></p>
+  <form id="gateF"><label>Password</label><input type="password" id="gateP" required>
+  <button class="btn full" style="margin-top:16px">Enter Dashboard</button></form>
+</div>
+<div class="adm" id="adm" style="display:none">
+  <aside class="side">
+    <a class="logo" href="/" style="display:block">UNBOTHERED<b style="color:var(--gold)">.</b></a>
+    <h5>Overview</h5><a data-tab="dash" class="on">Dashboard</a>
+    <h5>Commerce</h5><a data-tab="products">Products</a><a data-tab="orders">Orders</a><a data-tab="reviews">Reviews</a><a data-tab="coupons">Coupons</a>
+    <h5>Content</h5><a data-tab="homepage">Homepage</a><a data-tab="collections">Collections</a><a data-tab="journal">Journal</a><a data-tab="media">Media Library</a>
+    <h5>Services</h5><a data-tab="custom">Custom Orders</a><a data-tab="styling">Styling Requests</a>
+    <h5>System</h5><a data-tab="settings">Settings</a>
+    <a href="#" id="resetDemo" style="color:#8FA3C4">Reset demo data</a>
+    <a href="/" style="color:var(--gold)">← View Storefront</a>
+  </aside>
+  <main class="adm-main" id="admMain"></main>
+</div>
+<script src="/js/data.js"></script><script src="/js/store.js"></script><script src="/js/admin.js"></script>
+</body></html>
